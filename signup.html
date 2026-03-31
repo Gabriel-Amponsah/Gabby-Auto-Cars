@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Gabby Auto Cars</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <span class="brand-name">🚗 Gabby Auto</span>
+            </div>
+            <div class="nav-links">
+                <a href="home.html" class="nav-link">← Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Up Section -->
+    <section class="signup-section">
+        <div class="signup-container">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h1>Create Your Account</h1>
+                    <p>Join Gabby Auto Cars today and get access to premium vehicles</p>
+                    <div class="header-underline"></div>
+                </div>
+
+                <form class="signup-form">
+                    <!-- Row 1: Full Name -->
+                    <div class="form-group">
+                        <label for="username">Full Name</label>
+                        <input type="text" id="username" placeholder="Enter your full name" required>
+                    </div>
+
+                    <!-- Row 2: Email -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email address" required>
+                    </div>
+
+                    <!-- Row 3: Phone -->
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                    </div>
+
+                    <!-- Row 4: Password -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Create a strong password" required>
+                    </div>
+
+                    <!-- Row 5: Confirm Password -->
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                    </div>
+
+                    <!-- Row 6: Profile Picture -->
+                    <div class="form-group">
+                        <label for="profile-pic">Profile Picture</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="profile-pic" accept="image/*">
+                            <label for="profile-pic" class="file-label">📷 Choose Image</label>
+                        </div>
+                    </div>
+
+                    <!-- Row 7: Terms & Conditions -->
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms" class="checkbox-label">
+                            I agree to the <a href="#">Terms and Conditions</a> of Gabby Auto Cars
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-submit">CREATE ACCOUNT</button>
+
+                    <!-- Login Link -->
+                    <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
+                </form>
+            </div>
+
+            <!-- Decorative Elements -->
+            <div class="form-decoration">
+                <div class="decoration-circle decoration-circle-1"></div>
+                <div class="decoration-circle decoration-circle-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="home.html#cars">Cars</a></li>
+                    <li><a href="home.html#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h4>Contact Info</h4>
+                <p>📱 <strong>Phone:</strong> 0594954194 / 0501745528</p>
+                <p>📧 <strong>Email:</strong> amponsahtv493@gmail.com</p>
+                <p>📍 <strong>Location:</strong> Abuakwa-Kumasi, Ghana</p>
+            </div>
+            <div class="footer-box">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Gabby Auto Cars. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
