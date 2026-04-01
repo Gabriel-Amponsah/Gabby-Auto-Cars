@@ -5,8 +5,7 @@
     {
       "source": "/home.html",
       "destination": "/",
-      "permanent": true,
-      "statusCode": 301
+      "permanent": true
     }
   ]
 }
