@@ -97,6 +97,37 @@ body {
     color: var(--accent-color);
 }
 
+/* ====== HAMBURGER MENU ====== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    gap: 0.35rem;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
 /* ====== BUTTONS ====== */
 .btn {
     padding: 0.75rem 2rem;
@@ -478,6 +509,48 @@ body {
     box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
 }
 
+/* ====== NEWSLETTER FORM ====== */
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.newsletter-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+}
+
+.newsletter-btn:hover {
+    background-color: #e59d0b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+}
+
+.newsletter-btn:active {
+    transform: translateY(0);
+}
+
+/* ====== CONTACT LINKS ====== */
+.contact-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+    color: #fbbf24;
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
@@ -487,6 +560,70 @@ body {
 
 /* ====== RESPONSIVE DESIGN ====== */
 @media (max-width: 768px) {
+    /* ====== NAVBAR RESPONSIVE ====== */
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+
+    .navbar-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        min-width: fit-content;
+    }
+
+    .brand-name {
+        font-size: 1.4rem;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, var(--dark-bg) 0%, #1e3a5f 100%);
+        flex-direction: column;
+        width: 100%;
+        padding: 1.5rem 1rem;
+        gap: 0.8rem;
+        display: none;
+        box-shadow: var(--shadow);
+        border-bottom: 3px solid var(--accent-color);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-link {
+        padding: 0.75rem 1rem;
+        text-align: left;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background-color: rgba(245, 158, 11, 0.1);
+        padding-left: 1.5rem;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* ====== HERO RESPONSIVE ====== */
     .hero-title {
         font-size: 2.5rem;
     }
@@ -499,16 +636,62 @@ body {
         font-size: 2rem;
     }
 
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Extra small devices (phones) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+
+    .brand-name {
+        font-size: 1.2rem;
+        letter-spacing: 0;
+    }
+
     .nav-links {
+        top: 55px;
+        padding: 1rem 0.8rem;
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Tablets and larger (enhancement) */
+@media (min-width: 769px) {
+    .navbar-container {
         gap: 1rem;
     }
 
-    .navbar-container {
-        flex-direction: column;
-        text-align: center;
+    .nav-links {
+        gap: 2rem;
     }
 
-    .footer-container {
-        grid-template-columns: 1fr;
+    .nav-link {
+        position: relative;
     }
 }

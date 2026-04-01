@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabby Auto Cars - Premium Vehicle Solutions</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,7 +14,12 @@
             <div class="logo">
                 <span class="brand-name"> Gabby Auto</span>
             </div>
-            <div class="nav-links">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="image.html" class="nav-link">Cars</a>
                 <a href="#about" class="nav-link">About</a>
@@ -79,35 +84,86 @@
             <div class="footer-box">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#cars">Cars</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="image.html">Cars</a></li>
+                    <li><a href="explore.html">Explore</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-box">
                 <h4>Contact Info</h4>
-                <p>📱 <strong>Phone:</strong> 0594954194 / 0501745528</p>
-                <p>📧 <strong>Email:</strong> amponsahtv493@gmail.com</p>
+                <p>📱 <strong>Phone:</strong> <a href="tel:+233594954194" class="contact-link">0594954194</a> / <a href="tel:+233501745528" class="contact-link">0501745528</a></p>
+                <p>📧 <strong>Email:</strong> <a href="mailto:amponsahtv493@gmail.com" class="contact-link">amponsahtv493@gmail.com</a></p>
                 <p>📍 <strong>Location:</strong> Abuakwa-Kumasi, Ghana</p>
             </div>
             <div class="footer-box">
                 <h4>Follow Us</h4>
                 <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">WhatsApp</a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://wa.me/233594954194" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
                 </ul>
             </div>
             <div class="footer-box">
                 <h4>Newsletter</h4>
                 <p>Subscribe for latest deals and updates</p>
-                <input type="email" placeholder="Your email" class="email-input">
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Your email" class="email-input" id="newsletterEmail">
+                    <button class="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Gabby Auto Cars. All Rights Reserved. | Premium Vehicle Solutions</p>
         </div>
     </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = event.target.closest('nav');
+            if (!isClickInsideNav && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+
+        // Newsletter Subscribe
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletterEmail').value;
+            if (email && email.includes('@')) {
+                alert('Thank you for subscribing! Check your email for updates.');
+                document.getElementById('newsletterEmail').value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        // Allow Enter key to submit newsletter
+        document.getElementById('newsletterEmail').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                subscribeNewsletter();
+            }
+        });
+    </script>
 </body>
 </html>
+
